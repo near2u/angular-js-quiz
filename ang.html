@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+<script src="app.js"></script>
+<body ng-app="myApp" ng-controller="sample">
+
+<div >
+<p>Question : <input type="text" ng-model="ques"></p>
+
+  <p>Name : <input type="text" ng-model="ans1.text"></p>
+  <p>Name : <input type="checkbox"  ng-model="ans1.correct"></p>
+  <h1>Personal Detail {{ans}}</h1>
+  
+  
+</div>
+<h1>Contact {{ans1}}</h1>
+<input type="submit" ng-click="okz()"> <input type="submit" ng-click="showans()">
+
+<div  ng-if="checked">
+	<b> Quesstion: {{nn.que}}</b>
+	<table>
+		<tr><td>ANS Text</td><td>IS Correct</td></tr>
+		<tr ng-repeat="ans in nn.answers">
+			<td>Ans: {{ans.text}}</td> <td ng-if="ans.correct">YES</td><td ng-if="!ans.correct">NO</td>
+		</tr>
+	</table>
+	
+</div>
+<div >
+
+<b> Quiz: {{last.quiz_id}}</b>
+
+		
+		<div ng-repeat="ques in last.questions">
+			<td>Que: {{ques.que}}</td> 
+			<div ng-repeat="answ in ques.answers">
+				{{answ.text}}
+			</div>
+		</div>
+	
+
+</div>
+{{last}}
+</body>
+</html>
